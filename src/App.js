@@ -10,24 +10,6 @@ const numQuestions = 0;
 const numCorrect = 0;
 
 class App extends Component {
-  state = {
-  	'numQuestion': {numQuestions},
-    'numCorrect': {numCorrect}
-  }
-  
-  correctAnswer = () => {
-  	this.setState((currentState) => {
-    	numCorrect: currentState.numCorrect + 1;
-      	console.log(numCorrect);
-    })
-  }
-  
-  answerQuestion = () => {
-  	this.setState((currentState) => {
-    	numQuestion: currentState.numQuestions + 1;
-    })
-  }
-  
   render() {
     return (
       <div className="App">
@@ -40,7 +22,7 @@ class App extends Component {
           <div className="equation">
             <p className="text">{`${value1} + ${value2} + ${value3} = ${proposedAnswer}`}</p>
           </div>
-          <button onClick = {this.answerQuestion()} >True</button>
+          <button>True</button>
           <button>False</button>
           <p className="text">
             Your Score: {numCorrect}/{numQuestions}
